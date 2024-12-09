@@ -6,7 +6,7 @@
 /*   By: edribeir <edribeir@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/11/27 16:03:35 by edribeir      #+#    #+#                 */
-/*   Updated: 2024/12/09 09:30:42 by edooarda      ########   odam.nl         */
+/*   Updated: 2024/12/09 10:56:53 by edooarda      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,5 @@ int main (int argc, char **argv)
 			i++;
 		}
 	}
-	std::cout << "\n";
+	std::cout << std::endl;
 }
