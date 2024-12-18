@@ -6,7 +6,7 @@
 /*   By: edooarda <edooarda@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/12/11 11:01:39 by edooarda      #+#    #+#                 */
-/*   Updated: 2024/12/11 11:46:55 by edooarda      ########   odam.nl         */
+/*   Updated: 2024/12/17 14:54:23 by edooarda      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,31 @@
 
 #include "PhoneBook.hpp"
 
-// class CONTACT {
-// 	private:
-// 		std::string	FirstName;
-// 		std::string	LastName;
-// 		std::string	Nickname;
-// 		std::string	PhoneNumber;
-// 		std::string	DarkestSecret;
-// 		int			index;
-// };
+class Contact {
+	private:
+		std::string	firstName;
+		std::string	lastName;
+		std::string	nickname;
+		std::string	phoneNumber;
+		std::string	darkestSecret;
+		int			index;
+	public:
+		Contact();
+		~Contact();
+		std::string	getFirstName() const;
+		std::string	getLastName() const;
+		std::string	getNickname() const;
+		std::string	getPhoneNumber() const;
+		std::string	getDarkestSecret() const;
+		int	getIndex() const;
+		void	setFirstName(std::string str);
+		void	setLastName(std::string str);
+		void	setNickname(std::string str);
+		void	setPhoneNumber(std::string str);
+		void	setDarkestSecret(std::string str);
+		void	setIndex(int index);
+		void	printContact();
+
+};
 
 #endif

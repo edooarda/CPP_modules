@@ -6,7 +6,7 @@
 #    By: edooarda <edooarda@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2024/12/09 09:52:58 by edooarda      #+#    #+#                  #
-#    Updated: 2024/12/09 16:15:56 by edooarda      ########   odam.nl          #
+#    Updated: 2024/12/18 12:34:59 by edooarda      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,8 @@ BOLD = \033[1m
 RESET = \033[0m
 
 SRC = main.cpp \
+		PhoneBook.cpp \
+		Contact.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 

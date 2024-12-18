@@ -6,7 +6,7 @@
 /*   By: edooarda <edooarda@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/12/09 09:53:03 by edooarda      #+#    #+#                 */
-/*   Updated: 2024/12/11 11:47:52 by edooarda      ########   odam.nl         */
+/*   Updated: 2024/12/18 12:33:27 by edooarda      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,15 @@
 
 int main()
 {
+	PhoneBook contactList;
 	std::string option;
 	std::cout << "---------------------------------------------------------\n" << std::endl;
-	std::cout << "\t Welcome to your PhoneBook 📝" << std::endl;
-	std::cout << " Please type one option: ADD or SEARCH or EXIT\n" << std::endl;
+	std::cout << "\t Welcome to your PhoneBook 📝\n" << std::endl;
+	std::cout << " Please type one option:" << std::endl;
+	std::cout << " ADD - save a new contact" << std::endl;
+	std::cout << " SEARCH - display a specific contact" << std::endl;
+	std::cout << " EXIT - close the phonebook and erase contacts! 🧹\n" << std::endl;
+
 	std::cout << "---------------------------------------------------------\n" << std::endl;
 	while (1)
 	{
@@ -25,11 +30,11 @@ int main()
 		getline(std::cin, option);
 		if (option == "ADD")
 		{
-			std::cout << "Adicionei" << std::endl;
+			contactList.add();
 		}
 		else if (option == "SEARCH")
 		{
-			std::cout << "PROCUREI" << std::endl;
+			contactList.search();
 		}
 		else if (option == "EXIT")
 		{
