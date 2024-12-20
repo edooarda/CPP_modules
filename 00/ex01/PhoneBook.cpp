@@ -6,7 +6,7 @@
 /*   By: edooarda <edooarda@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/12/18 09:39:47 by edooarda      #+#    #+#                 */
-/*   Updated: 2024/12/18 15:51:58 by edooarda      ########   odam.nl         */
+/*   Updated: 2024/12/20 13:04:15 by edooarda      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,69 +14,22 @@
 
 PhoneBook::PhoneBook()
 {
-	std::cout << "Entrei no PhoneBook" << std::endl;
+	std::cout << "---------------------------------------------------------\n" << std::endl;
+	std::cout << "\t Welcome to your PhoneBook 📝\n" << std::endl;
+	std::cout << " You can choose between the following options" << std::endl;
+	std::cout << " ADD - save a new contact" << std::endl;
+	std::cout << " SEARCH - display a specific contact" << std::endl;
+	std::cout << " EXIT - close the phonebook and erase contacts! 🧹\n" << std::endl;
+	std::cout << "---------------------------------------------------------\n" << std::endl;
 	this->index = 0;
 }
 
 PhoneBook::~PhoneBook()
 {
-	std::cout << "Deletando tudo!"<< std::endl;
+	std::cout << "-------------------------------------\n" << std::endl;
+	std::cout << " Bye! Exiting from your PhoneBook ✅ \n" << std::endl;
+	std::cout << "-------------------------------------" << std::endl;
 }
-
-std::string	emptyChecker(std::string input)
-{
-	std::string value;
-
-	do
-	{
-		std::cout << input << ": ", std::getline(std::cin, value);
-		if (value.empty())
-			std::cout << input << " cannot be empty. Please try again." << std::endl;
-	} while (value.empty());
-	return (value);
-}
-
-bool	numberValidator(std::string input)
-{
-	int i = 0;
-
-	while (input[i])
-	{
-		if (!isnumber(input[i]))
-		{
-			std::cout << "\n 🚫 Invalid Phone Number. Please try again ONLY numbers.\n" << std::endl;
-			return (false);
-		}
-		i++;
-	}
-	if (i < 6 || i > 10)
-	{
-		std::cout << "\n 🚫 Invalid Phone Number. Please try again.\n \t Min 6 digits and Max 10 digits.\n" << std::endl;
-		return (false);
-	}
-	return (true);
-}
-
-void	truncValue(std::string str)
-{
-	int	len = str.size();
-
-	if (len > 10)
-	{
-		str.resize(10);
-		str[9] = '.';
-		std::cout << str;
-	}
-	else
-	{
-		for (int i = 10 - len; i > 0; i--)
-		{
-			std::cout << " ";
-		}
-		std::cout << str;
-	}
-}
-
 
 void	PhoneBook::add()
 {
@@ -84,9 +37,10 @@ void	PhoneBook::add()
 
 	if (this->index > 7)
 	{
-		std::cout << "You will replace one old contact. Be aware of it! 💀" << std::endl;
+		std::cout << "\nYou will replace one old contact. Be aware of it! 💀\n" << std::endl;
 		this->index = this->index % 8;
 	}
+	std::cout << "\t Ready to Add a Contact, Please type: " << std::endl; 
 	this->contactList[this->index].setIndex(this->index + 1);
 	this->contactList[this->index].setFirstName(emptyChecker("First Name"));
 	this->contactList[this->index].setLastName(emptyChecker("Last Name"));
@@ -99,60 +53,75 @@ void	PhoneBook::add()
 	this->contactList[this->index].setPhoneNumber(phone);
 	this->contactList[this->index].setDarkestSecret(emptyChecker("Darkest Secret"));
 	this->index++;
-	// TODO adicionar mensagem Usuario contato adicionado
+	std::cout << "\nContact was ADD to your PhoneBook! 🥳 \n" << std::endl;
 }
 
-void PhoneBook::printList()
+void	PhoneBook::printList()
 {
-	std::cout << "-----------------------------------------------" << std::endl;
-	std::cout << "   Index  | First Name | Last Name | Nickname |" << std::endl;
-	std::cout << "-----------------------------------------------" << std::endl;
-	for (int i = 0; i < 8 && i < (index - 1); i++)
+	std::cout << "--------------------------------------------" << std::endl;
+	std::cout << "   Index  |  F. Name |  L. Name |  Nickname" << std::endl;
+	std::cout << "--------------------------------------------" << std::endl;
+	for (int i = 0; i < 8 && (this->contactList[i].getIndex() != 0); i++)
 	{
 		truncValue(std::to_string(contactList[i].getIndex()));
 		std::cout << "|";
 		truncValue(contactList[i].getFirstName());
 		std::cout << "|";
-		// Resize(contactList[i].GetLastName());
-		// std::cout << "|";
-		// Resize(contactList[i].GetNickname());
+		truncValue(contactList[i].getLastName());
 		std::cout << "|";
+		truncValue(contactList[i].getNickname());
 		std::cout << std::endl;
-		std::cout << "-----------------------------------------" << std::endl;
+		std::cout << "--------------------------------------------" << std::endl;
 	}
 }
 
 void	PhoneBook::search()
 {
-	std::string	input;
-	// int			i;
+	std::string	contactIndex;
+	bool		contactFound = false;
 
 	if (this->contactList[0].getIndex() == 0)
 	{
-		std::cout << "OPS! The PhoneBook is currently empty!" << std::endl;
-		std::cout << "Add some contact to Start your List!\n" << std::endl;
+		std::cout << "\n\t ⚠️  OPS! The PhoneBook is currently empty" << std::endl;
+		std::cout << "\t   ADD some contact to begin your List!\n" << std::endl;
 		return ;
 	}
-	// printList();
-	// std::cout << "Please, provide the Contact Index you desire to see:";
-	// if (std::cin >> input && input.size() == 1 && input[0] >= '1' && input[0] <= '8')
-	// {
-	// 	i = input[0] - '0' - 1;
-	// 	// if (this->contactList[i].IsEmpty())
-	// 	// 	std::cout << "This entry is currently empty" << std::endl; 
-	// 	// else
-	// 	// {
-	// 		this->contactList[i].printContact();
-	// 		std::cin.clear();
-	// 		std::cin.ignore();
-	// 		// break;
-	// 	// }
-	// }
-	// else 
-	// {
-	// 	std::cout << "Please provide a valid index between 0 and 9" << std::endl;
-	// 	std::cin.clear();
-	// 	std::cin.ignore(100, '\n');
-	// }
+	printList();
+	while (contactFound == false)
+	{
+		std::cout << "\n To display more about a contact provide its INDEX NUMBER or to exit the SEARCH type E: ";
+		std::cin >> contactIndex;
+		if (contactIndex[0] == 'E' && contactIndex.size() == 1)
+		{
+			std::cout << "\n🟢 Exiting contact search" << std::endl;
+			std::cin.clear();
+			std::cin.ignore();
+			break;
+		}
+		else if (contactIndex.size() != 1 || !isnumber(contactIndex[0]) || contactIndex[0] == '9')
+		{
+			std::cout << "\n ❌ Wrong Input! Provide a index from 1 to 8, please" << std::endl;
+			std::cin.clear();
+			std::cin.ignore();
+		}
+		else
+		{
+			for (int i = 0; i < 8; i++)
+			{
+				if ((contactIndex[0] - 48) == this->contactList[i].getIndex())
+				{
+					this->contactList[i].printContact();
+					std::cin.clear();
+					std::cin.ignore();
+					contactFound = true;
+					break;
+				}
+			}
+			if (!contactFound)
+			{
+				std::cout << "\n⛔ Nothing to display, please try again" << std::endl;
+			}
+		}
+	}
 }
 

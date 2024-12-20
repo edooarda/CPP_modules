@@ -6,7 +6,7 @@
 /*   By: edooarda <edooarda@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/12/11 11:01:39 by edooarda      #+#    #+#                 */
-/*   Updated: 2024/12/17 14:54:23 by edooarda      ########   odam.nl         */
+/*   Updated: 2024/12/20 12:35:11 by edooarda      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ class Contact {
 		void	setDarkestSecret(std::string str);
 		void	setIndex(int index);
 		void	printContact();
-
 };
 
 #endif

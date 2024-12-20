@@ -6,7 +6,7 @@
 /*   By: edooarda <edooarda@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/12/17 12:26:07 by edooarda      #+#    #+#                 */
-/*   Updated: 2024/12/18 15:39:42 by edooarda      ########   odam.nl         */
+/*   Updated: 2024/12/20 11:45:35 by edooarda      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,6 @@ void	Contact::setPhoneNumber(std::string str)
 void	Contact::setDarkestSecret(std::string str)
 {
 	this->darkestSecret = str;
-	printContact();
 }
 
 void	Contact::setIndex(int index)
@@ -86,10 +85,10 @@ void	Contact::setIndex(int index)
 	this->index = index;
 }
 
-
 // Function to Print Selected Contact
 void	Contact::printContact()
 {
+	std::cout << "\n✨ Here is your Contact ✨ \n" << std::endl;
 	std::cout << "➜ Index: " << getIndex() << std::endl;
 	std::cout << "➜ First Name: " << getFirstName() << std::endl;
 	std::cout << "➜ Last Name: " << getLastName() << std::endl;
