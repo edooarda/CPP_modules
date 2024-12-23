@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   Utils.cpp                                          :+:    :+:            */
+/*   utils.cpp                                          :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: edooarda <edooarda@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/12/20 12:37:42 by edooarda      #+#    #+#                 */
-/*   Updated: 2024/12/20 12:46:24 by edooarda      ########   odam.nl         */
+/*   Updated: 2024/12/23 12:00:25 by edooarda      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
-std::string	emptyChecker(std::string input)
+std::string	PhoneBook::emptyChecker(std::string input)
 {
 	std::string value;
 
@@ -25,7 +25,7 @@ std::string	emptyChecker(std::string input)
 	return (value);
 }
 
-bool	numberValidator(std::string input)
+bool	PhoneBook::numberValidator(std::string input)
 {
 	int i = 0;
 
@@ -46,7 +46,7 @@ bool	numberValidator(std::string input)
 	return (true);
 }
 
-void	truncValue(std::string str)
+void	PhoneBook::truncValue(std::string str)
 {
 	int	len = str.size();
 

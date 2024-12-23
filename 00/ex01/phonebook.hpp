@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   phonebook.hpp                                      :+:    :+:            */
+/*   PhoneBook.hpp                                      :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: edooarda <edooarda@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/12/09 09:52:46 by edooarda      #+#    #+#                 */
-/*   Updated: 2024/12/20 13:05:05 by edooarda      ########   odam.nl         */
+/*   Updated: 2024/12/23 11:59:17 by edooarda      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,11 +30,11 @@ class PhoneBook
 		void	add();
 		void	search();
 		void	printList();
+		bool	numberValidator(std::string input);
+		std::string	emptyChecker(std::string input);
+		void	truncValue(std::string str);
 };
 
 // Auxiliar Functions
-bool	numberValidator(std::string input);
-std::string	emptyChecker(std::string input);
-void	truncValue(std::string str);
 
 #endif
