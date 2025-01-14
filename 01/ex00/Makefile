@@ -21,7 +21,10 @@ CYAN = \033[36m
 BOLD = \033[1m
 RESET = \033[0m
 
-SRC = main.cpp
+SRC = main.cpp \
+		Zombie.cpp \
+		randomChump.cpp \
+		newZombie.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 
