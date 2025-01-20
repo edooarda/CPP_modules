@@ -6,13 +6,13 @@
 #    By: edooarda <edooarda@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2024/12/23 09:43:18 by edooarda      #+#    #+#                  #
-#    Updated: 2024/12/23 09:44:52 by edooarda      ########   odam.nl          #
+#    Updated: 2025/01/20 16:21:03 by edribeir      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = account
 
-CPPFLAGS = -Wall -Werror -Wextra -std=c++98
+CPPFLAGS = -Wall -Werror -Wextra -std=c++11
 
 WHITE_B = \033[1;37m
 PINK = \033[35m

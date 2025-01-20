@@ -6,13 +6,13 @@
 #    By: edribeir <edribeir@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2024/11/27 16:03:22 by edribeir      #+#    #+#                  #
-#    Updated: 2024/11/27 16:56:43 by edribeir      ########   odam.nl          #
+#    Updated: 2025/01/20 16:20:37 by edribeir      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = megaphone
 
-CPPFLAGS = -Wall -Werror -Wextra -std=c++98
+CPPFLAGS = -Wall -Werror -Wextra -std=c++11
 
 WHITE_B = \033[1;37m
 PINK = \033[35m
