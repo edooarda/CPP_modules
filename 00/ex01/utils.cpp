@@ -6,7 +6,7 @@
 /*   By: edooarda <edooarda@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/12/20 12:37:42 by edooarda      #+#    #+#                 */
-/*   Updated: 2024/12/23 12:00:25 by edooarda      ########   odam.nl         */
+/*   Updated: 2025/01/20 16:22:30 by edribeir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ bool	PhoneBook::numberValidator(std::string input)
 
 	while (input[i])
 	{
-		if (!isnumber(input[i]))
+		if (!isdigit(input[i]))
 		{
 			std::cout << "\n 🚫 Invalid Phone Number. Please try again ONLY numbers.\n" << std::endl;
 			return (false);

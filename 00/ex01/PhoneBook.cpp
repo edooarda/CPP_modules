@@ -6,7 +6,7 @@
 /*   By: edooarda <edooarda@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/12/18 09:39:47 by edooarda      #+#    #+#                 */
-/*   Updated: 2024/12/20 14:10:16 by edooarda      ########   odam.nl         */
+/*   Updated: 2025/01/20 16:22:17 by edribeir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ void	PhoneBook::search()
 			std::cin.ignore();
 			break;
 		}
-		else if (contactIndex.size() != 1 || !isnumber(contactIndex[0]) || contactIndex[0] == '9' || contactIndex[0] == '0')
+		else if (contactIndex.size() != 1 || !isdigit(contactIndex[0]) || contactIndex[0] == '9' || contactIndex[0] == '0')
 		{
 			std::cout << "\n ❌ Wrong Input! Provide a index from 1 to 8, please" << std::endl;
 			std::cin.clear();
