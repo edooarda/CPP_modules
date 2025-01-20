@@ -6,7 +6,7 @@
 /*   By: edooarda <edooarda@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/12/09 09:52:46 by edooarda      #+#    #+#                 */
-/*   Updated: 2024/12/23 11:59:17 by edooarda      ########   odam.nl         */
+/*   Updated: 2025/01/20 17:00:09 by edribeir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,5 @@ class PhoneBook
 		std::string	emptyChecker(std::string input);
 		void	truncValue(std::string str);
 };
-
-// Auxiliar Functions
 
 #endif

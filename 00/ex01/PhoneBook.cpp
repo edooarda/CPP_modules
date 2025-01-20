@@ -6,7 +6,7 @@
 /*   By: edooarda <edooarda@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/12/18 09:39:47 by edooarda      #+#    #+#                 */
-/*   Updated: 2025/01/20 16:22:17 by edribeir      ########   odam.nl         */
+/*   Updated: 2025/01/20 17:00:00 by edribeir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,13 +63,13 @@ void	PhoneBook::printList()
 	std::cout << "--------------------------------------------" << std::endl;
 	for (int i = 0; i < 8 && (this->contactList[i].getIndex() != 0); i++)
 	{
-		truncValue(std::to_string(contactList[i].getIndex()));
+		truncValue(std::to_string(this->contactList[i].getIndex()));
 		std::cout << "|";
-		truncValue(contactList[i].getFirstName());
+		truncValue(this->contactList[i].getFirstName());
 		std::cout << "|";
-		truncValue(contactList[i].getLastName());
+		truncValue(this->contactList[i].getLastName());
 		std::cout << "|";
-		truncValue(contactList[i].getNickname());
+		truncValue(this->contactList[i].getNickname());
 		std::cout << std::endl;
 		std::cout << "--------------------------------------------" << std::endl;
 	}
@@ -124,4 +124,3 @@ void	PhoneBook::search()
 		}
 	}
 }
-
