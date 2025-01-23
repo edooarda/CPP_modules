@@ -6,7 +6,7 @@
 /*   By: edribeir <edribeir@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2024/11/27 16:03:35 by edribeir      #+#    #+#                 */
-/*   Updated: 2024/12/09 10:56:53 by edooarda      ########   odam.nl         */
+/*   Updated: 2025/01/23 11:14:41 by edribeir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 int main (int argc, char **argv)
 {
 	int i;
-	int j;
 
 	i = 1;
 	if (argc < 2)
@@ -26,11 +25,9 @@ int main (int argc, char **argv)
 	{
 		while(i < argc)
 		{
-			j = 0;
-			while(argv[i][j])
+			for (int j = 0; argv[i][j]; j++)
 			{
-				std::cout << (char)toupper(argv[i][j]);
-				j++;
+				std::cout << (char) std::toupper(argv[i][j]);
 			}
 			i++;
 		}
