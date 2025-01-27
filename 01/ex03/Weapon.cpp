@@ -6,29 +6,29 @@
 /*   By: edribeir <edribeir@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/01/20 16:45:38 by edribeir      #+#    #+#                 */
-/*   Updated: 2025/01/20 16:45:39 by edribeir      ########   odam.nl         */
+/*   Updated: 2025/01/27 12:22:31 by edribeir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Weapon.hpp"
 
-Weapon::Weapon(const std::string type)
+Weapon::Weapon(const std::string type): _type(type)
 {
-	this->type = type;
-	std::cout << "Filling ammo from "<< type << std::endl;
+	std::cout << type << " is ready for use!!" << std::endl;
 }
 
 Weapon::~Weapon()
 {
-	std::cout << "Running out of ammo, destruing Weapon" << std::endl;
+	std::cout << "Leaving Weapon 💥" << std::endl;
+	std::cout << std::endl;
 }
 
 const std::string&	Weapon::getType() const
 {
-	return (this->type);
+	return (this->_type);
 }
 
-void	Weapon::setType(std::string w_type)
+void	Weapon::setType(std::string type)
 {
-	this->type = w_type;
+	this->_type = type;
 }

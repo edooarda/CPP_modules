@@ -6,13 +6,13 @@
 #    By: edribeir <edribeir@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2025/01/20 16:45:42 by edribeir      #+#    #+#                  #
-#    Updated: 2025/01/20 16:45:43 by edribeir      ########   odam.nl          #
+#    Updated: 2025/01/27 11:56:53 by edribeir      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = violence
 
-CPPFLAGS = -Wall -Werror -Wextra -std=c++98
+CPPFLAGS = -Wall -Werror -Wextra -std=c++11
 
 WHITE_B = \033[1;37m
 PINK = \033[35m
@@ -24,6 +24,7 @@ RESET = \033[0m
 SRC = main.cpp \
 		Weapon.cpp \
 		HumanA.cpp \
+		HumanB.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 

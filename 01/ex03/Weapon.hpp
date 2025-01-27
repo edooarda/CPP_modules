@@ -6,7 +6,7 @@
 /*   By: edribeir <edribeir@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/01/20 16:45:34 by edribeir      #+#    #+#                 */
-/*   Updated: 2025/01/20 16:45:35 by edribeir      ########   odam.nl         */
+/*   Updated: 2025/01/27 11:09:12 by edribeir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class Weapon
 {
 	private:
-		std::string	type;
+		std::string	_type;
 	public:
 		Weapon(const std::string type);
 		~Weapon();

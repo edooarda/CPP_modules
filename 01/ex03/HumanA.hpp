@@ -6,7 +6,7 @@
 /*   By: edribeir <edribeir@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/01/20 16:45:17 by edribeir      #+#    #+#                 */
-/*   Updated: 2025/01/20 16:45:18 by edribeir      ########   odam.nl         */
+/*   Updated: 2025/01/27 11:03:28 by edribeir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 class HumanA
 {
 	private:
-		std::string	name;
-		Weapon		&weapon;
+		std::string	_name;
+		Weapon		&_weapon;
 	public:
 		HumanA(std::string name,Weapon &weapon);
 		~HumanA();
