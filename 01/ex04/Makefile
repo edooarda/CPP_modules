@@ -6,7 +6,7 @@
 #    By: edribeir <edribeir@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2025/01/27 14:40:50 by edribeir      #+#    #+#                  #
-#    Updated: 2025/01/29 11:34:25 by edribeir      ########   odam.nl          #
+#    Updated: 2025/01/30 14:44:51 by edribeir      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ BOLD = \033[1m
 RESET = \033[0m
 
 SRC = main.cpp \
+		replace_strings.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 
