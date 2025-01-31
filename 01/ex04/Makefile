@@ -6,7 +6,7 @@
 #    By: edribeir <edribeir@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2025/01/27 14:40:50 by edribeir      #+#    #+#                  #
-#    Updated: 2025/01/30 14:44:51 by edribeir      ########   odam.nl          #
+#    Updated: 2025/01/31 15:20:04 by edribeir      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,7 @@ clean:
 	@echo "✅"
 
 fclean: clean
+	@rm -f *.replace
 	@rm -f $(NAME)
 	@echo "$(B_GREEN)$(WHITE_B) ALL Cleansed! $(RESET)"
 
