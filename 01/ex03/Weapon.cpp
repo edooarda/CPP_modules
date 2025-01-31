@@ -6,7 +6,7 @@
 /*   By: edribeir <edribeir@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/01/20 16:45:38 by edribeir      #+#    #+#                 */
-/*   Updated: 2025/01/27 12:22:31 by edribeir      ########   odam.nl         */
+/*   Updated: 2025/01/30 17:51:22 by edribeir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Weapon::Weapon(const std::string type): _type(type)
 Weapon::~Weapon()
 {
 	std::cout << "Leaving Weapon 💥" << std::endl;
-	std::cout << std::endl;
+	std::cout << "\n";
 }
 
 const std::string&	Weapon::getType() const
