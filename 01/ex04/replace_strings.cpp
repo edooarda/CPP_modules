@@ -6,38 +6,41 @@
 /*   By: edribeir <edribeir@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/01/30 14:43:41 by edribeir      #+#    #+#                 */
-/*   Updated: 2025/01/30 17:56:03 by edribeir      ########   odam.nl         */
+/*   Updated: 2025/01/31 15:12:37 by edribeir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fake_sed.hpp"
 
-bool	is_outfile_create(std::string &filename, std::string &find, std::string &replace)
+bool	replace_strings(std::string &filename, std::string &remove, std::string &replace)
 {
-	std::string input;
-
-	std::ofstream outfile(filename + ".replace");
-	if (!outfile.is_open())
-	{
-		std::cout << "Problem creating .replace" << std::endl;
-		return (false);
-	}
-	// while()
-	return (true);
-}
-
-bool	replace_strings(std::string &filename, std::string &find, std::string &replace)
-{
-	std::ifstream infile(filename);
+	std::string		line;
+	size_t			position;
+	size_t			begin;
+	
+	std::ifstream	infile(filename);
 	if (infile.is_open())
 	{
-		std::cout << "Abri! EXISTE! " << find << " " << replace << std::endl;
-		if (!is_outfile_create(filename, find, replace))
+		std::ofstream	outfile(filename + ".replace");
+		if (!outfile.is_open())
 		{
+			std::cout << "Problem creating" << filename << ".replace" << std::endl;
 			infile.close();
 			return (false);
 		}
+		while(std::getline(infile, line))
+		{
+			begin = 0;
+			while((position = line.find(remove, begin)) != std::string::npos)
+			{
+				line.erase(position, remove.length());
+				line.insert(position, replace);
+				begin = position + replace.length();
+			}
+			outfile << line << "\n";
+		}
 		infile.close();
+		outfile.close();
 		return (true);
 	}
 	else

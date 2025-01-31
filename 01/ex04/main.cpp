@@ -6,7 +6,7 @@
 /*   By: edribeir <edribeir@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/01/27 14:42:11 by edribeir      #+#    #+#                 */
-/*   Updated: 2025/01/30 16:56:26 by edribeir      ########   odam.nl         */
+/*   Updated: 2025/01/31 15:15:49 by edribeir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,9 @@ int main (int argc, char **argv)
 			std::cout << "Strings couldn't be empty, please try again" << std::endl;
 			return (1);
 		}
-		if (!replace_strings(_filename, _str1, _str2))
+		if (replace_strings(_filename, _str1, _str2))
+			std::cout << "Everything is ready! 🥳 Look at your " << _filename <<".replace file." << std::endl;
+		else
 			return (1);
 	}
 }
