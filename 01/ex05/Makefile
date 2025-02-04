@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
-#                                                         ::::::::             #
-#    Makefile                                           :+:    :+:             #
-#                                                      +:+                     #
-#    By: edribeir <edribeir@student.codam.nl>         +#+                      #
-#                                                    +#+                       #
-#    Created: 2025/02/03 12:14:40 by edribeir      #+#    #+#                  #
-#    Updated: 2025/02/03 17:58:36 by edribeir      ########   odam.nl          #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: edooarda <edooarda@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/02/03 12:14:40 by edribeir          #+#    #+#              #
+#    Updated: 2025/02/04 14:25:43 by edooarda         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,7 +37,6 @@ clean:
 	@echo "✅"
 
 fclean: clean
-	@rm -f *.replace
 	@rm -f $(NAME)
 	@echo "$(B_GREEN)$(WHITE_B) ALL Cleansed! $(RESET)"
 
