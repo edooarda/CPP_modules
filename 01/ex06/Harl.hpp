@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   Harl.hpp                                           :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: edribeir <edribeir@student.codam.nl>         +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2025/02/03 18:36:48 by edribeir      #+#    #+#                 */
-/*   Updated: 2025/02/03 18:40:56 by edribeir      ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: edooarda <edooarda@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/03 18:36:48 by edribeir          #+#    #+#             */
+/*   Updated: 2025/02/04 15:51:50 by edooarda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,14 @@ class Harl
 		Harl();
 		~Harl();
 
+		enum Level {
+			DEBUG,
+			INFO,
+			WARNING,
+			ERROR,
+			OUT
+		};
+		Level	convert_str_to_enum(std::string &levelstr);
 		void	complains(std::string level);
 };
 

@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
-#                                                         ::::::::             #
-#    Makefile                                           :+:    :+:             #
-#                                                      +:+                     #
-#    By: edribeir <edribeir@student.codam.nl>         +#+                      #
-#                                                    +#+                       #
-#    Created: 2025/02/03 18:35:32 by edribeir      #+#    #+#                  #
-#    Updated: 2025/02/03 18:58:01 by edribeir      ########   odam.nl          #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: edooarda <edooarda@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2025/02/03 18:35:32 by edribeir          #+#    #+#              #
+#    Updated: 2025/02/04 15:34:03 by edooarda         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ BOLD = \033[1m
 RESET = \033[0m
 
 SRC = main.cpp \
-		# Harl.cpp \
+		Harl.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 
@@ -37,7 +37,6 @@ clean:
 	@echo "✅"
 
 fclean: clean
-	@rm -f *.replace
 	@rm -f $(NAME)
 	@echo "$(B_GREEN)$(WHITE_B) ALL Cleansed! $(RESET)"
 
