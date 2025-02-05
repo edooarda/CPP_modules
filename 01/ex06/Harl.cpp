@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Harl.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: edooarda <edooarda@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/03 18:36:51 by edribeir          #+#    #+#             */
-/*   Updated: 2025/02/04 15:48:35 by edooarda         ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   Harl.cpp                                           :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: edooarda <edooarda@student.42.fr>            +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2025/02/03 18:36:51 by edribeir      #+#    #+#                 */
+/*   Updated: 2025/02/05 12:59:47 by edribeir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,14 +68,17 @@ void	Harl::complains(std::string level)
 	switch (convert_str_to_enum(level))
 	{
 		case DEBUG:
-			debug();
+			this->debug();
+			// Fallthrough
 		case INFO:
-			info();
+			this->info();
+			// Fallthrough
 		case WARNING:
-			warning();
+			this->warning();
+			// Fallthrough
 		case ERROR:
 		{
-			error();
+			this->error();
 			break ;
 		}
 		default:
