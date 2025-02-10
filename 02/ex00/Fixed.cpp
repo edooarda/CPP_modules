@@ -6,7 +6,7 @@
 /*   By: edribeir <edribeir@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/02/07 13:49:34 by edribeir      #+#    #+#                 */
-/*   Updated: 2025/02/07 19:50:39 by edribeir      ########   odam.nl         */
+/*   Updated: 2025/02/10 13:38:12 by edribeir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ Fixed& Fixed::operator=(const Fixed &other)
 	std::cout << "Copy assignment operator called" << std::endl;
 	if (this != &other)
 	{
-		this->_value = other.getRawBits();
+		this->_value = other._value;
 	}
 	return (*this);
 }
