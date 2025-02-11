@@ -6,7 +6,7 @@
 /*   By: edribeir <edribeir@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/02/10 09:50:53 by edribeir      #+#    #+#                 */
-/*   Updated: 2025/02/10 16:22:30 by edribeir      ########   odam.nl         */
+/*   Updated: 2025/02/11 16:08:17 by edribeir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ int Fixed::toInt( void ) const
 {
 	int	new_value;
 
-	new_value = this->_value >> this->_fractionalBits;
+	new_value = this->_value / (1 << this->_fractionalBits);
 	return (new_value);
 }
 
