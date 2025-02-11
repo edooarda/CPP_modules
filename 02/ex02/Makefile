@@ -6,7 +6,7 @@
 #    By: edribeir <edribeir@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2025/02/10 16:28:42 by edribeir      #+#    #+#                  #
-#    Updated: 2025/02/10 16:28:54 by edribeir      ########   odam.nl          #
+#    Updated: 2025/02/11 18:18:00 by edribeir      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,7 @@ OBJ = $(SRC:.cpp=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	@g++ $(CPPFLAGS) $(OBJ) -o $(NAME)
+	@c++ $(CPPFLAGS) $(OBJ) -o $(NAME)
 	@echo "$(PINK)$(BOLD)\n	Ready?! Here we go! 🚀$(RESET)\n"
 
 clean:
