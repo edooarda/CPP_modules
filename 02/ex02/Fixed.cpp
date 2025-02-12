@@ -6,7 +6,7 @@
 /*   By: edribeir <edribeir@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/02/10 16:28:32 by edribeir      #+#    #+#                 */
-/*   Updated: 2025/02/11 18:26:04 by edribeir      ########   odam.nl         */
+/*   Updated: 2025/02/12 09:49:16 by edribeir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -177,3 +177,27 @@ Fixed Fixed::operator++(int)
 	this->operator++();
 	return (temp);
 }
+
+
+// Decrement
+// Pre
+Fixed& Fixed::operator--()
+{
+	int value;
+
+	value = this->getRawBits() - 1; // it takes (smallest representative) 1/256 that is 2^8
+	this->setRawBits(value);
+	return (*this);
+}
+
+// Post
+Fixed Fixed::operator--(int)
+{
+	Fixed temp(*this);
+
+	operator--();
+	return(temp);
+}
+
+
+// Overloaded member Functions, MAX and MIN

@@ -6,7 +6,7 @@
 /*   By: edribeir <edribeir@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/02/10 16:28:35 by edribeir      #+#    #+#                 */
-/*   Updated: 2025/02/11 18:25:48 by edribeir      ########   odam.nl         */
+/*   Updated: 2025/02/12 09:31:07 by edribeir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ class Fixed{
 		Fixed operator++(int); //++a
 
 		// Decrement
-		// a--
-		// --a
+		Fixed& operator--(); // a--
+		Fixed operator--(int); // --a
 
 		// Comparisson MAX and MIN, overloaded member functions
 		// a < b MIN

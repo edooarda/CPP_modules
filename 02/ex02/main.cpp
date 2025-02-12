@@ -6,7 +6,7 @@
 /*   By: edribeir <edribeir@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/02/10 16:28:39 by edribeir      #+#    #+#                 */
-/*   Updated: 2025/02/11 18:24:04 by edribeir      ########   odam.nl         */
+/*   Updated: 2025/02/12 09:31:17 by edribeir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ int main( void )
 	Fixed c = a + b; 
 	std::cout << c << std::endl;
 	std::cout << a << std::endl;
-	std::cout << ++a << std::endl;
+	std::cout << --a << std::endl;
 	std::cout << a << std::endl;
-	std::cout << a++ << std::endl;
+	std::cout << a-- << std::endl;
 	std::cout << a << std::endl;
 	// std::cout << b << std::endl;
 	// std::cout << Fixed::max( a, b ) << std::endl;
