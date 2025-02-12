@@ -6,7 +6,7 @@
 /*   By: edribeir <edribeir@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/02/10 16:28:35 by edribeir      #+#    #+#                 */
-/*   Updated: 2025/02/12 09:31:07 by edribeir      ########   odam.nl         */
+/*   Updated: 2025/02/12 14:53:38 by edribeir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,11 @@ class Fixed{
 		Fixed operator--(int); // --a
 
 		// Comparisson MAX and MIN, overloaded member functions
-		// a < b MIN
-		// a < b const MIN
+		static Fixed& min(Fixed& a, Fixed& b); // a < b MIN
+		static const Fixed& min(const Fixed& a, const Fixed& b); // a < b const MIN
 
-		// a > b MAX
-		// a > b const  MAX
+		static Fixed& max(Fixed& a, Fixed& b);// a > b MAX
+		static const Fixed& max(const Fixed& a, const Fixed& b);// a > b const  MAX
 		
 		// destructor
 		~Fixed();

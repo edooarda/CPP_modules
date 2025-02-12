@@ -6,7 +6,7 @@
 /*   By: edribeir <edribeir@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/02/10 16:28:32 by edribeir      #+#    #+#                 */
-/*   Updated: 2025/02/12 09:49:16 by edribeir      ########   odam.nl         */
+/*   Updated: 2025/02/12 14:54:58 by edribeir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -201,3 +201,36 @@ Fixed Fixed::operator--(int)
 
 
 // Overloaded member Functions, MAX and MIN
+// MIN
+Fixed& Fixed::min(Fixed& a, Fixed& b)
+{
+	if(a < b)
+		return (a);
+	else
+		return (b);
+}
+
+const Fixed& Fixed::min(const Fixed& a, const Fixed& b)
+{
+	if(a < b)
+		return (a);
+	else
+		return (b);
+}
+
+// MAX
+Fixed& Fixed::max(Fixed& a, Fixed& b)
+{
+	if(a > b)
+		return (a);
+	else
+		return (b);
+}
+
+const Fixed& Fixed::max(const Fixed& a, const Fixed& b)
+{
+	if(a > b)
+		return (a);
+	else
+		return (b);
+}
