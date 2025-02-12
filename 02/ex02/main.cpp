@@ -6,7 +6,7 @@
 /*   By: edribeir <edribeir@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/02/10 16:28:39 by edribeir      #+#    #+#                 */
-/*   Updated: 2025/02/12 14:51:22 by edribeir      ########   odam.nl         */
+/*   Updated: 2025/02/12 16:32:45 by edribeir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int main( void )
 	std::cout << a << std::endl;
 	std::cout << b << std::endl;
 	std::cout << Fixed::max( a, b ) << std::endl;
-	std::cout << Fixed::min( a, b ) << std::endl;
+	// std::cout << Fixed::min( a, b ) << std::endl;
 
 	return 0;
 }
