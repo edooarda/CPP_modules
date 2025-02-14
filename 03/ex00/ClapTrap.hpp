@@ -6,7 +6,7 @@
 /*   By: edribeir <edribeir@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/02/13 16:34:00 by edribeir      #+#    #+#                 */
-/*   Updated: 2025/02/13 17:39:56 by edribeir      ########   odam.nl         */
+/*   Updated: 2025/02/14 14:19:11 by edribeir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,24 +18,25 @@
 class ClapTrap{
 	private:
 		std::string _name;
-		int			_hit_points = 10;
-		int			_energy_points = 10;
-		int			_attack_damage = 0;
+		int			_hit_points; // represents the health of the ClapTrap
+		int			_energy_points;
+		int			_attack_damage;
 	public:
 		ClapTrap();
 		ClapTrap(const ClapTrap& other);
 		ClapTrap& operator=(const ClapTrap& other);
 		~ClapTrap();
 
-		//get for name
-		//get for hit
-		//get for energy
-		//get for attack
+		ClapTrap(const std::string& name);
+		std::string get_name() const;
+		int get_hit_points() const;
+		int get_energy_points() const;
+		int get_attack_damage() const;
 
-		// set for name
-		// set for hit
-		// set for energy
-		// set for attack
+		void set_hit_points(int amount);
+		void set_energy_points(int amount);
+		void set_attack_damage(int amount);
+
 
 		void attack(const std::string& target);
 		void takeDamage(unsigned int amount);
