@@ -6,7 +6,7 @@
 /*   By: edribeir <edribeir@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/02/13 16:33:55 by edribeir      #+#    #+#                 */
-/*   Updated: 2025/02/14 14:15:46 by edribeir      ########   odam.nl         */
+/*   Updated: 2025/02/20 13:57:06 by edribeir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,13 @@ ClapTrap& ClapTrap::operator=(const ClapTrap& other)
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "Destruct" << std::endl;
+	std::cout << "Destruct"<< this->get_name() << std::endl;
 }
 
-// custom construct 
+// custom construct
 ClapTrap::ClapTrap(const std::string& name) : _name(name), _hit_points(10), _energy_points(10), _attack_damage(0)
 {
-	std::cout << "name construct" << std::endl;
+	std::cout << "Construct" << name << std::endl;
 }
 
 // Getters
@@ -88,8 +88,13 @@ void ClapTrap::set_attack_damage(int amount)
 }
 
 
+bool	ClapTrap::isEnergyorHitpoints()
+{
+	if (get_energy_points() == 0 || get_hit_points() == 0)
+		std::cout << this->get_name() << "doesn't have any energy or maybe it is dead 😵" << std::endl;
+}
 
-void ClapTrap::attack(const std::string& target)
+void ClapTrap::attack(const std::string& target) // -1 to energy
 {
 	// -1 of energy for each attack
 	// amount of damage
@@ -100,13 +105,17 @@ void ClapTrap::takeDamage(unsigned int amount)
 	
 }
 
-void ClapTrap::beRepaired(unsigned int amount)
+void ClapTrap::beRepaired(unsigned int amount) // -1 to energy
 {
-	if (get_energy_points() == 0 || get_hit_points == 0)
+	if (get_energy_points() == 0 || get_hit_points() == 0)
 		std::cout << this->get_name() << "doesn't have any energy or maybe it is dead 😵" << std::endl;
 	else
 	{
 		if (get_hit_points() == 10)
 			std::cout << this->get_name() << "is with Full life! Doesnt need Repair ✌️" << std::endl;
+		else
+		{
+			std::cout << this->get_name() <<
+		}
 	}
 }

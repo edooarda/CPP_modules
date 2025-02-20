@@ -6,7 +6,7 @@
 /*   By: edribeir <edribeir@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/02/13 16:34:00 by edribeir      #+#    #+#                 */
-/*   Updated: 2025/02/14 14:19:11 by edribeir      ########   odam.nl         */
+/*   Updated: 2025/02/20 13:56:57 by edribeir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,7 @@ class ClapTrap{
 		void attack(const std::string& target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
+
+		bool	isEnergyorHitpoints();
 };
 #endif
