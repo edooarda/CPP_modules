@@ -6,7 +6,7 @@
 /*   By: edribeir <edribeir@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/02/13 16:33:55 by edribeir      #+#    #+#                 */
-/*   Updated: 2025/02/21 18:03:30 by edribeir      ########   odam.nl         */
+/*   Updated: 2025/02/21 18:12:53 by edribeir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ ClapTrap::ClapTrap(const std::string& name) : name(name), hit_points(10), energy
 // Getters
 std::string	ClapTrap::get_name() const
 {
-	return(this->name);
+	return("ClapTrap " + this->name);
 }
 
 int	ClapTrap::get_hit_points() const
@@ -100,7 +100,7 @@ void	ClapTrap::attack(const std::string& target) // -1 to energy
 		return ;
 	}
 	this->set_energy_points(this->get_energy_points() - 1);
-	std::cout << "ClapTrap "<< this->get_name() << " attacks " << target << ", causing " << this->get_attack_damage() << " points of damage!" << std::endl;
+	std::cout << this->get_name() << " attacks " << target << ", causing " << this->get_attack_damage() << " points of damage!" << std::endl;
 }
 
 void	ClapTrap::takeDamage(unsigned int amount)
@@ -110,7 +110,7 @@ void	ClapTrap::takeDamage(unsigned int amount)
 		std::cout << this->get_name() << " is a dead body, leave it alone! 🪦" << std::endl;
 		return ;
 	}
-	if (amount <= 0)
+	if (amount == 0)
 	{
 		std::cout << "This attack was to weak 😪 " << this->get_name() << " received " << amount << " damage" << std::endl;
 	}
