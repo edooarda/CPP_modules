@@ -6,7 +6,7 @@
 /*   By: edribeir <edribeir@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/02/13 16:34:00 by edribeir      #+#    #+#                 */
-/*   Updated: 2025/02/20 13:56:57 by edribeir      ########   odam.nl         */
+/*   Updated: 2025/02/21 17:59:37 by edribeir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,14 @@
 #define CLAPTRAP_HPP
 
 #include <iostream>
+#include <climits>
 
 class ClapTrap{
 	private:
-		std::string _name;
-		int			_hit_points; // represents the health of the ClapTrap
-		int			_energy_points;
-		int			_attack_damage;
+		std::string name;
+		int			hit_points; // represents the health of the ClapTrap
+		int			energy_points;
+		int			attack_damage;
 	public:
 		ClapTrap();
 		ClapTrap(const ClapTrap& other);
@@ -41,7 +42,5 @@ class ClapTrap{
 		void attack(const std::string& target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
-
-		bool	isEnergyorHitpoints();
 };
 #endif
