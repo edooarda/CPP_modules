@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        ::::::::            */
-/*   ClapTrap.cpp                                       :+:    :+:            */
-/*                                                     +:+                    */
-/*   By: edribeir <edribeir@student.codam.nl>         +#+                     */
-/*                                                   +#+                      */
-/*   Created: 2025/02/13 16:33:55 by edribeir      #+#    #+#                 */
-/*   Updated: 2025/02/21 18:12:53 by edribeir      ########   odam.nl         */
+/*                                                        :::      ::::::::   */
+/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: edooarda <edooarda@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/02/13 16:33:55 by edribeir          #+#    #+#             */
+/*   Updated: 2025/02/26 20:43:43 by edooarda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,12 +89,12 @@ void	ClapTrap::set_attack_damage(int amount)
 
 void	ClapTrap::attack(const std::string& target) // -1 to energy
 {
-	if (get_energy_points() == 0)
+	if (this->get_energy_points() == 0)
 	{
 		std::cout << this->get_name() << " doesn't have any energy 🪫" << std::endl;
 		return ;
 	}
-	else if (get_hit_points() == 0)
+	else if (this->get_hit_points() == 0)
 	{
 		std::cout << this->get_name() << " is a death body, leave it alone! 🪦" << std::endl;
 		return ;
@@ -121,7 +121,6 @@ void	ClapTrap::takeDamage(unsigned int amount)
 	}
 	else
 	{
-		std::cout << "This is the hit_points now " << this->get_hit_points() << std::endl;
 		std::cout << "Ouch, This attack hits hard! 😫 " << this->get_name() << " received " << amount << " damage " << std::endl;
 		if (this->hit_points - amount <= 0)
 			this->set_hit_points(0);
@@ -132,7 +131,7 @@ void	ClapTrap::takeDamage(unsigned int amount)
 
 void	ClapTrap::beRepaired(unsigned int amount) // -1 to energy
 {
-	if (get_energy_points() == 0)
+	if (this->get_energy_points() == 0)
 	{
 		std::cout << this->get_name() << " doesn't have any energy 🪫" << std::endl;
 		return ;
@@ -140,7 +139,7 @@ void	ClapTrap::beRepaired(unsigned int amount) // -1 to energy
 	else
 	{
 		this->set_energy_points(this->get_energy_points() - 1);
-		if (get_hit_points() == 10)
+		if (this->get_hit_points() == 10)
 			std::cout << this->get_name() << " is with Full life! 🎉 Not necessary repair." << std::endl;
 		else
 		{
