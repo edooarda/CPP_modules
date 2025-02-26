@@ -6,11 +6,11 @@
 #    By: edooarda <edooarda@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/02/13 16:22:52 by edribeir          #+#    #+#              #
-#    Updated: 2025/02/24 21:27:44 by edooarda         ###   ########.fr        #
+#    Updated: 2025/02/26 20:47:43 by edooarda         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = fight
+NAME = open_the_gate
 
 CPPFLAGS = -Wall -Werror -Wextra -std=c++11
 
@@ -23,6 +23,7 @@ RESET = \033[0m
 
 SRC = main.cpp \
 	ClapTrap.cpp \
+	ScavTrap.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 
