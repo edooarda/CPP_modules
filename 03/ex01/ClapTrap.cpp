@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: edooarda <edooarda@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/13 16:33:55 by edribeir          #+#    #+#             */
-/*   Updated: 2025/02/26 21:13:06 by edooarda         ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   ClapTrap.cpp                                       :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: edooarda <edooarda@student.42.fr>            +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2025/02/13 16:33:55 by edribeir      #+#    #+#                 */
+/*   Updated: 2025/03/03 14:01:30 by edribeir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 ClapTrap::ClapTrap() : name("Default"), hit_points(10), energy_points(10), attack_damage(0)
 {
 	std::cout << "Claptrap Construct" << std::endl;
+	this->max_HP = this->get_hit_points();
 }
 
 ClapTrap::ClapTrap(const ClapTrap& other)
@@ -24,6 +25,7 @@ ClapTrap::ClapTrap(const ClapTrap& other)
 	this->hit_points = other.hit_points;
 	this->energy_points = other.energy_points;
 	this->attack_damage = other.attack_damage;
+	this->max_HP = other.max_HP;
 }
 
 ClapTrap&	ClapTrap::operator=(const ClapTrap& other)
@@ -35,6 +37,7 @@ ClapTrap&	ClapTrap::operator=(const ClapTrap& other)
 		this->hit_points = other.hit_points;
 		this->energy_points = other.energy_points;
 		this->attack_damage = other.attack_damage;
+		this->max_HP = other.max_HP;
 	}
 	return (*this);
 }
@@ -48,6 +51,7 @@ ClapTrap::~ClapTrap()
 ClapTrap::ClapTrap(const std::string& name) : name(name), hit_points(10), energy_points(10), attack_damage(0)
 {
 	std::cout << "ClapTrap Construct " << name << std::endl;
+	this->max_HP = this->get_hit_points();
 }
 
 // Getters
@@ -69,6 +73,11 @@ int	ClapTrap::get_energy_points() const
 int	ClapTrap::get_attack_damage() const
 {
 	return(this->attack_damage);
+}
+
+int	ClapTrap::get_max_HP() const
+{
+	return (this->max_HP);
 }
 
 // Setters
@@ -114,7 +123,7 @@ void	ClapTrap::takeDamage(unsigned int amount)
 	{
 		std::cout << "This attack was to weak 😪 " << "ClapTrap " << this->get_name() << " received " << amount << " damage" << std::endl;
 	}
-	else if (amount > 10)
+	else if (amount > (unsigned int)get_max_HP())
 	{
 		std::cout << "FATALITY! This was enough to kill 💀 ClapTrap " << this->get_name() << ". Its received " << amount << " damage" << std::endl;
 		this->set_hit_points(0);

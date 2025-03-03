@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: edooarda <edooarda@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/25 18:04:03 by edribeir          #+#    #+#             */
-/*   Updated: 2025/02/26 21:52:31 by edooarda         ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   ScavTrap.cpp                                       :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: edooarda <edooarda@student.42.fr>            +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2025/02/25 18:04:03 by edribeir      #+#    #+#                 */
+/*   Updated: 2025/03/03 14:00:24 by edribeir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ ScavTrap::ScavTrap() : ClapTrap() // default
 	this->hit_points = 100;
 	this->energy_points = 50;
 	this->attack_damage = 20;
+	this->max_HP = this->get_hit_points();
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap()
@@ -27,6 +28,7 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap()
 	this->hit_points = 100;
 	this->energy_points = 50;
 	this->attack_damage = 20;
+	this->max_HP = this->get_hit_points();
 }
 
 ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other)

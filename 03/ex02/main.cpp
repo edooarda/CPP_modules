@@ -6,7 +6,7 @@
 /*   By: edooarda <edooarda@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/02/13 16:33:23 by edribeir      #+#    #+#                 */
-/*   Updated: 2025/03/03 14:04:18 by edribeir      ########   odam.nl         */
+/*   Updated: 2025/03/03 14:44:20 by edribeir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,16 +57,17 @@ int main()
 		FragTrap	c("Carne");
 		a.attack(b.get_name());
 		b.attack(a.get_name());
-		a.attack(c.get_name());
-		c.attack(a.get_name());
 		a.takeDamage(20);
+		// a.attack(c.get_name());
+		c.attack(a.get_name());
+		a.takeDamage(30);
 
 		c.highFivesGuys();
-		b.guardGate();
-		printall(b);
+		// b.guardGate();
+		// printall(b);
 		printall(c);
-		b.takeDamage(100);
-		b.guardGate();
+		// b.takeDamage(100);
+		// b.guardGate();
 		c.takeDamage(100);
 		c.highFivesGuys();
 		printall(b);
