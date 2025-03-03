@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: edooarda <edooarda@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/13 16:33:55 by edribeir          #+#    #+#             */
-/*   Updated: 2025/02/26 20:43:43 by edooarda         ###   ########.fr       */
+/*                                                        ::::::::            */
+/*   ClapTrap.cpp                                       :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: edooarda <edooarda@student.42.fr>            +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2025/02/13 16:33:55 by edribeir      #+#    #+#                 */
+/*   Updated: 2025/03/03 16:51:19 by edribeir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 ClapTrap::ClapTrap() : name("Default"), hit_points(10), energy_points(10), attack_damage(0)
 {
-	std::cout << "Construct" << std::endl;
+	std::cout << "ClapTrap Construct" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap& other)
 {
-	std::cout << "Cpy Construct" << std::endl;
+	std::cout << "ClapTrap Cpy Construct" << std::endl;
 	this->name = other.name;
 	this->hit_points = other.hit_points;
 	this->energy_points = other.energy_points;
@@ -28,7 +28,7 @@ ClapTrap::ClapTrap(const ClapTrap& other)
 
 ClapTrap&	ClapTrap::operator=(const ClapTrap& other)
 {
-	std::cout << "Cpy Operator" << std::endl;
+	std::cout << "ClapTrap Cpy Operator" << std::endl;
 	if (this != &other)
 	{
 		this->name = other.name;
