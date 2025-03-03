@@ -6,7 +6,7 @@
 /*   By: edooarda <edooarda@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/02/13 16:33:55 by edribeir      #+#    #+#                 */
-/*   Updated: 2025/03/03 14:01:30 by edribeir      ########   odam.nl         */
+/*   Updated: 2025/03/03 14:59:56 by edribeir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,7 +123,7 @@ void	ClapTrap::takeDamage(unsigned int amount)
 	{
 		std::cout << "This attack was to weak 😪 " << "ClapTrap " << this->get_name() << " received " << amount << " damage" << std::endl;
 	}
-	else if (amount > (unsigned int)get_max_HP())
+	else if (amount > (unsigned int)this->get_max_HP())
 	{
 		std::cout << "FATALITY! This was enough to kill 💀 ClapTrap " << this->get_name() << ". Its received " << amount << " damage" << std::endl;
 		this->set_hit_points(0);
@@ -138,7 +138,7 @@ void	ClapTrap::takeDamage(unsigned int amount)
 	}
 }
 
-void	ClapTrap::beRepaired(unsigned int amount) 
+void	ClapTrap::beRepaired(unsigned int amount)
 {
 	if (this->get_energy_points() == 0)
 	{
@@ -148,14 +148,14 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	else
 	{
 		this->set_energy_points(this->get_energy_points() - 1);
-		if (this->get_hit_points() == 10)
+		if (this->get_hit_points() == this->get_max_HP())
 			std::cout << "ClapTrap " << this->get_name() << " is with Full life! 🎉 Not necessary repair." << std::endl;
 		else
 		{
-			if (this->get_hit_points() + amount > 10)
+			if (this->get_hit_points() + amount > (unsigned int)this->get_max_HP())
 			{
 				std::cout << "ClapTrap " << this->get_name() << " was repaired until full life 🔋" << std::endl;
-				this->set_hit_points(10);
+				this->set_hit_points(this->get_max_HP());
 			}
 			else
 			{
