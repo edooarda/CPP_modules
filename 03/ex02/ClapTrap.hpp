@@ -6,7 +6,7 @@
 /*   By: edooarda <edooarda@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/02/13 16:34:00 by edribeir      #+#    #+#                 */
-/*   Updated: 2025/03/03 13:58:13 by edribeir      ########   odam.nl         */
+/*   Updated: 2025/03/03 18:14:49 by edribeir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,5 @@ class ClapTrap{
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
 };
+
 #endif

@@ -6,7 +6,7 @@
 /*   By: edooarda <edooarda@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/02/13 16:33:55 by edribeir      #+#    #+#                 */
-/*   Updated: 2025/03/03 14:59:56 by edribeir      ########   odam.nl         */
+/*   Updated: 2025/03/03 18:24:45 by edribeir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,24 +114,24 @@ void	ClapTrap::attack(const std::string& target) // -1 to energy
 
 void	ClapTrap::takeDamage(unsigned int amount)
 {
-	if (this->get_hit_points() == 0)
+	if (this->get_hit_points() <= 0)
 	{
 		std::cout << "ClapTrap " << this->get_name() << " is a dead body, leave it alone! 🪦" << std::endl;
 		return ;
 	}
 	if (amount == 0)
 	{
-		std::cout << "This attack was to weak 😪 " << "ClapTrap " << this->get_name() << " received " << amount << " damage" << std::endl;
+		std::cout << "This attack was to weak 😪 " << std::endl;
 	}
 	else if (amount > (unsigned int)this->get_max_HP())
 	{
-		std::cout << "FATALITY! This was enough to kill 💀 ClapTrap " << this->get_name() << ". Its received " << amount << " damage" << std::endl;
+		std::cout << "FATALITY! This was enough to kill " << this->get_name() << " 💀 "<< std::endl;
 		this->set_hit_points(0);
 	}
 	else
 	{
-		std::cout << "Ouch, This attack hits hard! 😫 ClapTrap " << this->get_name() << " received " << amount << " damage " << std::endl;
-		if (this->hit_points - amount <= 0)
+		std::cout << "Ouch, This attack hits hard, " << this->get_name() << " ! 😫" << std::endl;
+		if(amount > (unsigned int)this->get_hit_points())
 			this->set_hit_points(0);
 		else
 			this->set_hit_points(this->get_hit_points() - amount);

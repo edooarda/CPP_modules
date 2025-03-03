@@ -6,7 +6,7 @@
 /*   By: edooarda <edooarda@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/02/13 16:33:23 by edribeir      #+#    #+#                 */
-/*   Updated: 2025/03/03 14:44:20 by edribeir      ########   odam.nl         */
+/*   Updated: 2025/03/03 18:32:46 by edribeir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void printall(ClapTrap &insert)
 int main()
 {
 	{
-		std::cout << "\n------------\n\n";
 		FragTrap	first;
 		printall(first);
 	}
@@ -73,5 +72,25 @@ int main()
 		printall(b);
 		printall(a);
 		printall(c);
+	}
+	{
+		std::cout << "\n------------\n\n";
+
+		FragTrap	a("Forever Alone");
+		
+		a.attack("Himself");
+		a.takeDamage(30);
+		a.attack("Himself");
+		a.takeDamage(30); // 60
+		a.attack("Himself");
+		a.takeDamage(30); // 90
+		a.attack("Himself");
+		a.takeDamage(30); // 120
+		a.beRepaired(120);
+		a.attack("Himself");
+		a.takeDamage(30);
+		for (int i = 0; i <= 100; ++i)
+			a.attack("Himself");
+		printall(a);
 	}
 }
