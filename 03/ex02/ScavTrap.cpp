@@ -6,7 +6,7 @@
 /*   By: edooarda <edooarda@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/02/25 18:04:03 by edribeir      #+#    #+#                 */
-/*   Updated: 2025/03/03 14:00:24 by edribeir      ########   odam.nl         */
+/*   Updated: 2025/03/04 10:01:47 by edribeir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap()
 
 ScavTrap::ScavTrap(const ScavTrap &other) : ClapTrap(other)
 {
-	std::cout << " ScavTrap Cpy Construct";
+	std::cout << " ScavTrap Cpy Construct" << std::endl;
 }
 
 ScavTrap&	ScavTrap::operator=(const ScavTrap& other)

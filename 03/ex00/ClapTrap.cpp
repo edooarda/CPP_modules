@@ -6,7 +6,7 @@
 /*   By: edooarda <edooarda@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/02/13 16:33:55 by edribeir      #+#    #+#                 */
-/*   Updated: 2025/03/03 18:25:45 by edribeir      ########   odam.nl         */
+/*   Updated: 2025/03/04 10:00:52 by edribeir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ void	ClapTrap::attack(const std::string& target) // -1 to energy
 	}
 	else if (this->get_hit_points() == 0)
 	{
-		std::cout << "ClapTrap " << this->get_name() << " is a death body, leave it alone! 🪦" << std::endl;
+		std::cout << "ClapTrap " << this->get_name() << " there is no more life on this body. Try to repair..." << std::endl;
 		return ;
 	}
 	this->set_energy_points(this->get_energy_points() - 1);
