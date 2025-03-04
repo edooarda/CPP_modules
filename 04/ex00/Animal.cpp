@@ -6,7 +6,7 @@
 /*   By: edribeir <edribeir@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/03/04 11:23:30 by edribeir      #+#    #+#                 */
-/*   Updated: 2025/03/04 11:49:29 by edribeir      ########   odam.nl         */
+/*   Updated: 2025/03/04 18:39:59 by edribeir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,11 @@ Animal::~Animal()
 	std::cout << "Animal Destruct" << std::endl;
 }
 
-void Animal::makeSound(void)
+std::string Animal::getType(void) const
+{
+	return(this->type);
+}
+void Animal::makeSound(void) const
 {
 	std::cout << " S I L E N C E " << std::endl;
 }
