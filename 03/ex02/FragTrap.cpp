@@ -6,7 +6,7 @@
 /*   By: edribeir <edribeir@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/03/03 11:08:46 by edribeir      #+#    #+#                 */
-/*   Updated: 2025/03/03 14:05:18 by edribeir      ########   odam.nl         */
+/*   Updated: 2025/03/04 10:12:02 by edribeir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,4 +64,20 @@ void FragTrap::highFivesGuys(void)
 		return ;
 	}
 	std::cout << "  WE ARE THE CHAMPIONS MY FRIEND! 🙏 (high five)" << std::endl;
+}
+
+void	FragTrap::attack(const std::string& target)
+{
+	if (this->get_energy_points() == 0)
+	{
+		std::cout << "  FragTrap " << this->get_name() << " is out of energy 🪫" << std::endl;
+		return ;
+	}
+	else if (this->get_hit_points() == 0)
+	{
+		std::cout << "  FragTrap " << this->get_name() << " is DEAD! 🪦" << std::endl;
+		return ;
+	}
+	this->set_energy_points(this->get_energy_points() - 1);
+	std::cout << "  FragTrap " << this->get_name() << " attacks " << target << ", causing " << this->get_attack_damage() << " points of damage!" << std::endl;
 }
