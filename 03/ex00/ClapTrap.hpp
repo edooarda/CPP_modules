@@ -6,7 +6,7 @@
 /*   By: edribeir <edribeir@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/02/13 16:34:00 by edribeir      #+#    #+#                 */
-/*   Updated: 2025/03/03 18:15:03 by edribeir      ########   odam.nl         */
+/*   Updated: 2025/03/04 12:54:04 by edribeir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 #include <climits>
 
 class ClapTrap{
-	protected:
+	private:
 		std::string	name;
 		int			hit_points; // represents the health of the ClapTrap
 		int			energy_points;
