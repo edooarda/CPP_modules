@@ -6,7 +6,7 @@
 #    By: edribeir <edribeir@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2025/03/04 11:15:57 by edribeir      #+#    #+#                  #
-#    Updated: 2025/03/11 16:14:23 by edribeir      ########   odam.nl          #
+#    Updated: 2025/03/14 18:39:32 by edribeir      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,8 @@ SRC = main.cpp \
 		Dog.cpp \
 		Cat.cpp \
 		Brain.cpp \
+		WrongAnimal.cpp \
+		WrongCat.cpp \
 
 
 OBJ = $(SRC:.cpp=.o)
