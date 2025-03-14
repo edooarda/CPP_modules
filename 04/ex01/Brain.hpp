@@ -6,7 +6,7 @@
 /*   By: edribeir <edribeir@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/03/11 16:14:44 by edribeir      #+#    #+#                 */
-/*   Updated: 2025/03/11 16:28:47 by edribeir      ########   odam.nl         */
+/*   Updated: 2025/03/14 13:59:36 by edribeir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,9 @@ class Brain {
 		Brain(const Brain &other);
 		Brain& operator=(const Brain &other);
 		~Brain();
+
+	void setIdeas(std::string idea, int index);
+	std::string getIdeas(int index) const;
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: edribeir <edribeir@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/03/04 17:56:28 by edribeir      #+#    #+#                 */
-/*   Updated: 2025/03/12 16:19:02 by edribeir      ########   odam.nl         */
+/*   Updated: 2025/03/14 16:27:02 by edribeir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,14 @@ Dog::~Dog()
 void	Dog::makeSound(void) const
 {
 	std::cout << " WOOF WOFF" << std::endl;
+}
+
+void Dog::setIdeas(std::string idea, int index)
+{
+	this->brain->setIdeas(idea, index);
+}
+
+std::string Dog::getIdeas(int index) const
+{
+	return (this->brain->getIdeas(index));
 }
