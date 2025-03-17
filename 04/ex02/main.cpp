@@ -6,7 +6,7 @@
 /*   By: edribeir <edribeir@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/03/04 11:17:57 by edribeir      #+#    #+#                 */
-/*   Updated: 2025/03/17 13:39:21 by edribeir      ########   odam.nl         */
+/*   Updated: 2025/03/17 16:50:02 by edribeir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,11 @@ int main()
 	// 	Dog a;
 	
 	// 	a.makeSound();
+	// }
+
+	// Dog basic;
+	// {
+	// 	Dog tmp = basic;
 	// }
 	return 0;
 }

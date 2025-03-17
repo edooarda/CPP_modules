@@ -6,7 +6,7 @@
 /*   By: edribeir <edribeir@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/03/06 13:10:02 by edribeir      #+#    #+#                 */
-/*   Updated: 2025/03/17 13:22:51 by edribeir      ########   odam.nl         */
+/*   Updated: 2025/03/17 16:44:17 by edribeir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,17 @@ Cat& Cat::operator=(const Cat& other)
 	if (this != &other)
 	{
 		AAnimal::operator=(other);
+		delete this->brain;
+		this->brain = new Brain(*other.brain);
 	}
 	return (*this);
 }
 
 Cat::Cat(const Cat& other) : AAnimal(other)
 {
-	std::cout << "  Cat Cpy Construct" << std::endl;
+	std::cout << "  Cat Cpy Construct (deep)" << std::endl;
+	this->type = other.type;
+	this->brain = new Brain(*other.brain);
 }
 
 Cat::~Cat()
