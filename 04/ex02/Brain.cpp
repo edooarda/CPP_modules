@@ -6,7 +6,7 @@
 /*   By: edribeir <edribeir@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/03/11 16:14:34 by edribeir      #+#    #+#                 */
-/*   Updated: 2025/03/14 16:28:06 by edribeir      ########   odam.nl         */
+/*   Updated: 2025/03/17 16:59:59 by edribeir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ Brain::Brain()
 
 Brain::Brain(const Brain &other)
 {
-	*this = other;
+	for (int i = 0; i < 100; ++i) {
+		this->ideas[i] = other.ideas[i];
+	}
 	std::cout << "    Brain Cpy Construct" << std::endl;
 }
 
