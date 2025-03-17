@@ -6,7 +6,7 @@
 /*   By: edribeir <edribeir@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/03/06 13:10:02 by edribeir      #+#    #+#                 */
-/*   Updated: 2025/03/14 17:39:58 by edribeir      ########   odam.nl         */
+/*   Updated: 2025/03/17 16:35:25 by edribeir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,23 @@ Cat& Cat::operator=(const Cat& other)
 	if (this != &other)
 	{
 		Animal::operator=(other);
+		delete this->brain;
+		this->brain = new Brain(*other.brain);
 	}
 	return (*this);
 }
 
+// Cat::Cat(const Cat& other) : Animal(other)
+// {
+// 	std::cout << "  Cat Cpy Construct (shallow)" << std::endl;
+// }
+
+// deep copy makes copys of the pointers and the data 
 Cat::Cat(const Cat& other) : Animal(other)
 {
-	std::cout << "  Cat Cpy Construct" << std::endl;
+	std::cout << "  Cat Cpy Construct (deep)" << std::endl;
+	this->type = other.type;
+	this->brain = new Brain(*other.brain);
 }
 
 Cat::~Cat()
@@ -42,7 +52,7 @@ Cat::~Cat()
 
 void	Cat::makeSound(void) const
 {
-	std::cout << "MIAU MIAU" << std::endl;
+	std::cout << "  MIAU MIAU" << std::endl;
 }
 
 void	Cat::setIdeas(std::string idea, int index)

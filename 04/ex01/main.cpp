@@ -6,7 +6,7 @@
 /*   By: edribeir <edribeir@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/03/04 11:17:57 by edribeir      #+#    #+#                 */
-/*   Updated: 2025/03/14 18:40:04 by edribeir      ########   odam.nl         */
+/*   Updated: 2025/03/17 16:39:13 by edribeir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,14 @@
 
 int main()
 {
-	// const Animal* j = new Dog();
-	// const Animal* i = new Cat();
+	const Animal* j = new Dog();
+	const Animal* i = new Cat();
 
-	// delete j;//should not create a leak
-	// delete i;
+	delete j;//should not create a leak
+	delete i;
 
 	std::cout << "\n--------------------------------\n" << std::endl;
 
-	// create & fill an array of Animals
 	Animal* animals[10];
 	for (int i = 0; i < 10; ++i)
 	{
@@ -96,5 +95,27 @@ int main()
 			std::cout << "index: " << i << " Catito ideas: " << catito.getIdeas(i) << std::endl;
 		}
 	}
+	
+	{
+		std::cout << "\n------------------------------------\n" << std::endl;
+		Dog dog1;
+		dog1.setIdeas("Chase the ball", 0);
+
+		Dog dog2 = dog1;
+
+		// Dog dog2;
+		// dog2 = dog1;
+
+		dog2.setIdeas("Eat food", 0);
+
+		std::cout << dog1.getIdeas(0) << std::endl;
+		std::cout << dog2.getIdeas(0) << std::endl;
+	}
+
+	// Dog basic;
+	// {
+	// 	Dog tmp = basic;
+	// }
+
 	return 0;
 }
