@@ -6,7 +6,7 @@
 /*   By: edribeir <edribeir@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/03/04 11:17:57 by edribeir      #+#    #+#                 */
-/*   Updated: 2025/03/10 10:58:23 by edribeir      ########   odam.nl         */
+/*   Updated: 2025/03/17 15:40:15 by edribeir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ int main()
 
 		delete abomination;
 		delete quimera;
+		delete notcat;
 	}
 	return 0;
 }
