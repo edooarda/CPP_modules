@@ -5,7 +5,7 @@ Bureaucrat::Bureaucrat() : name("Default") , grade(150)
     std::cout << "Default Constructor" << std::endl;
 }
 
-Bureaucrat::Bureaucrat(std::string name, int grade) : name(name) , grade(grade)
+Bureaucrat::Bureaucrat(const std::string name, int grade) : name(name) , grade(grade)
 {
     std::cout << "---Welcome to the Work---" << std::endl;
     std::cout << "It is " << name << "'s first day at work." << std::endl;
