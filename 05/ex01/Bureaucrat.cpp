@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        ::::::::            */
+/*   Bureaucrat.cpp                                     :+:    :+:            */
+/*                                                     +:+                    */
+/*   By: edribeir <edribeir@student.codam.nl>         +#+                     */
+/*                                                   +#+                      */
+/*   Created: 2025/06/19 13:19:06 by edribeir      #+#    #+#                 */
+/*   Updated: 2025/06/19 13:19:07 by edribeir      ########   odam.nl         */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat() : name("Default") , grade(150) 
