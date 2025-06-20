@@ -6,11 +6,18 @@
 /*   By: edribeir <edribeir@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/06/20 11:12:41 by edribeir      #+#    #+#                 */
-/*   Updated: 2025/06/20 12:55:19 by edribeir      ########   odam.nl         */
+/*   Updated: 2025/06/20 13:10:45 by edribeir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Intern.hpp"
+
+Intern::Intern(){
+    std::cout << "Cheap labor, Ops, INTERN was created" << std::endl;
+}
+Intern::~Intern(){
+    std::cout << "The Intern return home." << std::endl;
+}
 
 AForm *create_shrub(const std::string &target)
 {

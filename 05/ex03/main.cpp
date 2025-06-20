@@ -6,7 +6,7 @@
 /*   By: edribeir <edribeir@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/06/19 13:19:29 by edribeir      #+#    #+#                 */
-/*   Updated: 2025/06/20 12:54:30 by edribeir      ########   odam.nl         */
+/*   Updated: 2025/06/20 13:10:13 by edribeir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 
 int main()
 {
-    Intern humanity;
     Bureaucrat god("God", 1);
+    Intern humanity;
     AForm* paperwork;
 
     paperwork = humanity.makeForm("ShrubberyCreationForm", "Eden");
