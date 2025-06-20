@@ -6,7 +6,7 @@
 /*   By: edribeir <edribeir@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2025/06/19 13:19:23 by edribeir      #+#    #+#                 */
-/*   Updated: 2025/06/19 18:57:39 by edribeir      ########   odam.nl         */
+/*   Updated: 2025/06/20 12:33:30 by edribeir      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class AForm {
         AForm(const std::string name, int sign_grade, const int execute_grade);
         AForm(const AForm &other);
         AForm& operator=(const AForm &other);
-        ~AForm();
+        virtual ~AForm();
 
         std::string getName() const;
         int getGradeToSign() const;
