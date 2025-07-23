@@ -1,5 +1,5 @@
-#ifndef DATA_CPP
-#define DATA_CPP
+#ifndef DATA_HPP
+#define DATA_HPP
 
 #include <iostream>
 

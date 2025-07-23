@@ -1,5 +1,5 @@
-#ifndef SERIALIZER_CPP
-#define SERIALIZER_CPP
+#ifndef SERIALIZER_HPP
+#define SERIALIZER_HPP
 
 #include <iostream>
 #include <cstdint>
