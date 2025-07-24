@@ -198,11 +198,6 @@ void ScalarConverter::convert(const std::string& input)
     }
     if (is_pseudo_literal(input) == true)
         return ;
-    else if (input.length() == 1)
-    {
-        if(is_char(input) == true)
-            return ;
-    }
     else {
         if (is_valid_digits(input) == true)
         {
@@ -224,6 +219,11 @@ void ScalarConverter::convert(const std::string& input)
                 if (is_int(input) == true)
                     return ;
             }
+        }
+        else if (input.length() == 1)
+        {
+            if (is_char(input) == true)
+                return ;
         }
         else
             std::cout << "IMPOSSIBLE to convert \"" << input << "\", please try again." << std::endl;
