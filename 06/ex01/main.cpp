@@ -5,7 +5,7 @@ int main()
 {
     Data old_data;
     Data *new_data = nullptr;
-    uintptr_t temp_ptr;
+    uintptr_t temp_ptr = 0;
 
     old_data.value = 42;
 
@@ -30,7 +30,7 @@ int main()
 
     Data *old_data1 = new Data();
     Data *new_data1 = nullptr;
-    uintptr_t temp_ptr1;
+    uintptr_t temp_ptr1 = 0;
 
     old_data1->value = 42;
 
