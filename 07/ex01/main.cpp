@@ -37,4 +37,8 @@ int main()
     ::iter(arr_float, (sizeof(arr_float)/ sizeof(arr_float[0])), increase<float>);
     std::cout << "After increase" << std::endl;
     ::iter(arr_float, (sizeof(arr_float)/ sizeof(arr_float[0])), print<float>);
+
+    std::cout << "\nConst Int" << std::endl;
+    const int arr_int1[] = {3, 2, 1};
+    ::iter(arr_int1, (sizeof(arr_int1)/ sizeof(arr_int1[0])), print<int>);
 }
