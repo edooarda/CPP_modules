@@ -1,5 +1,5 @@
 
-NAME = 
+NAME =  iter
 
 CPPFLAGS = -Wall -Werror -Wextra -std=c++11
 
