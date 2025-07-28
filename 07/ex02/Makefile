@@ -1,5 +1,5 @@
 
-NAME =
+NAME = array
 
 CPPFLAGS = -Wall -Werror -Wextra -std=c++11
 
