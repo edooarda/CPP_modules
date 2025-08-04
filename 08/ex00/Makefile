@@ -15,7 +15,6 @@ SRC = main.cpp \
 OBJ = $(SRC:.cpp=.o)
 DEPS = $(OBJ:.o=.d)
 
--include $(DEPS)
 
 all: $(NAME)
 
@@ -33,5 +32,6 @@ fclean: clean
 
 re: fclean all
 
+-include $(DEPS)
 
 .PHONY: all clean fclean re
