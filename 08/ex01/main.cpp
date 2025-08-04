@@ -8,15 +8,28 @@ int main()
     sp.addNumber(17);
     sp.addNumber(9);
     sp.addNumber(11);
-    sp.printer();
+    // sp.printer();
 
-    try{
-        sp.addNumber(112);
-    }catch (std::exception &e)
-    {
-        std::cout << "Exception: " << e.what() << std::endl;
-    }
-    // std::cout << sp.shortestSpan() << std::endl;
-    // std::cout << sp.longestSpan() << std::endl;
+    // try{
+    //     sp.addNumber(112);
+    // }catch (std::exception &e)
+    // {
+    //     std::cout << "Exception: " << e.what() << std::endl;
+    // }
+    std::cout << sp.shortestSpan() << std::endl;
+    std::cout << sp.longestSpan() << std::endl;
+
+
+    // Span test(3);
+    // test.addNumber(6);
+    // // test.printer();
+
+    // try {
+    //     std::cout << test.longestSpan() << std::endl;
+    // }
+    // catch (std::exception &e)
+    // {
+    //     std::cout << "Exception: " << e.what() << std::endl;
+    // }
     return 0;
 }

@@ -4,6 +4,8 @@
 #include <iostream>
 #include <exception>
 #include <vector>
+#include <algorithm>
+#include <limits>
 
 class Span {
     private:
@@ -17,8 +19,17 @@ class Span {
         ~Span();
 
         void addNumber(unsigned int number);
+        unsigned int shortestSpan();
+        unsigned int longestSpan();
 
         void printer();
+
+
+        class tooFewElements : public std::exception
+        {
+            public:
+                const char* what() const throw();
+        };
 };
 
 #endif
