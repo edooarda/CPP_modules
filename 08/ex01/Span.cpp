@@ -34,8 +34,7 @@ void Span::addNumber(unsigned int number)
 {
     if (this->container.size() >= this->max_elements)
     {
-        throw std::out_of_range("Error: Container already have the MAX capacity");
-        return ;
+        throw maxCapacity();
     }
     this->container.push_back(number);
 }
@@ -46,7 +45,7 @@ unsigned int Span::shortestSpan() // small distance
     {
         throw tooFewElements();
     }
-    std::vector<unsigned int> sorted_container = this->container;
+    auto sorted_container = this->container;
     std::sort(sorted_container.begin(), sorted_container.end());
     int minSpan = std::numeric_limits<int>::max();
 
@@ -82,4 +81,18 @@ void Span::printer()
 const char* Span::tooFewElements::what() const throw()
 {
     return "Error: Too few elements to calculate span";
+}
+
+const char* Span::maxCapacity::what() const throw()
+{
+    return "Error: Container already have the MAX capacity";
+}
+
+void Span::addRange(std::vector<unsigned int> vec)
+{
+    for (auto it = vec.begin(); it != vec.end(); it++)
+    {
+        addNumber(*it);
+        // std::cout << "This is it: " << *it << std::endl;
+    }
 }

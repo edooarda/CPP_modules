@@ -24,12 +24,20 @@ class Span {
 
         void printer();
 
-
         class tooFewElements : public std::exception
         {
             public:
                 const char* what() const throw();
         };
+
+        class maxCapacity : public std::exception
+        {
+            public:
+                const char* what() const throw();
+        };
+
+        void addRange(std::vector<unsigned int> vec);
+
 };
 
 #endif
