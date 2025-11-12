@@ -26,7 +26,17 @@ int main()
     std::stack<int> s(mstack);
     std::cout << "\nThis is the last one add: " << s.top() << std::endl;
 
+    std::cout << "\n ========================= REVERSE TEST =============" << std::endl;
+
+    MutantStack<int>::reverse_iterator revit = mstack.rbegin();
+    MutantStack<int>::reverse_iterator revite = mstack.rend();
+    while(revit != revite){
+        std::cout << *revit << std::endl;
+        ++revit;
+    }
+
     std::cout << "\n ========================= CONST TEST =============" << std::endl;
+
     MutantStack<int> temp;
     temp.push(5);
     temp.push(17);
@@ -47,6 +57,15 @@ int main()
     {
         std::cout << *cit << std::endl;
         ++cit;
+    }
+
+    std::cout << "\n ========================= CONST REVERSE TEST =============" << std::endl;
+
+    MutantStack<int>::const_reverse_iterator crevit = mstack.rbegin();
+    MutantStack<int>::const_reverse_iterator crevite = mstack.rend();
+    while(crevit != crevite){
+        std::cout << *crevit << std::endl;
+        ++crevit;
     }
 
     std::cout << "===================LIST====================" << std::endl;
