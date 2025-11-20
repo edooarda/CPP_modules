@@ -10,11 +10,11 @@ int main(int argc, char **argv)
 
     try {
         BitcoinExchange BCE("./data.csv");
+        BCE.validateInput(argv[1]);
     }
     catch(const std::exception &e)
     {
         std::cerr << "Error: " << e.what() << std::endl;
         return 1;
     }
-    std::cout << argv[1] << std::endl;
 }
