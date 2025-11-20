@@ -11,6 +11,7 @@ RESET = \033[0m
 
 
 SRC = main.cpp \
+	BitcoinExchange.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 DEPS = $(OBJ:.o=.d)

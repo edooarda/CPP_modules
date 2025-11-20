@@ -8,5 +8,13 @@ int main(int argc, char **argv)
         return 1;
     }
 
+    try {
+        BitcoinExchange BCE("./data.csv");
+    }
+    catch(const std::exception &e)
+    {
+        std::cerr << "Error: " << e.what() << std::endl;
+        return 1;
+    }
     std::cout << argv[1] << std::endl;
 }
