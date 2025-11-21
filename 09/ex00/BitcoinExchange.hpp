@@ -5,6 +5,8 @@
 #include <fstream>
 #include <map>
 #include <string>
+#include <algorithm>
+#include <iomanip>
 
 class BitcoinExchange {
     private:
@@ -28,7 +30,7 @@ class BitcoinExchange {
         bool valueValidation(const std::string& value);
         bool dateValidation(const std::string& date);
 
-        // add exchange function
+        void exchangeValue();
 
         void printMap();
 

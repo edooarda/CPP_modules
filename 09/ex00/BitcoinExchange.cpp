@@ -111,16 +111,15 @@ static std::string trimFunction(std::string input)
 {
     if (input.empty())
     return input;
-    size_t i = 0;
-    while (i < input.size() && std::isspace(static_cast<unsigned char>(input[i])))
-        ++i;
-    input.substr(i);
+    size_t a = 0;
+    while (a < input.size() && std::isspace(static_cast<unsigned char>(input[a])))
+        ++a;
 
     size_t b = input.size();
     while (b > 0 && std::isspace(static_cast<unsigned char>(input[b-1])))
         --b;
 
-    return input.substr(i, b - i);
+    return input.substr(a, b - a);
 }
 
 static bool dayCheck(std::string str)
@@ -165,50 +164,50 @@ static bool yearCheck(std::string str)
 
 bool BitcoinExchange::dateValidation(const std::string& date)
 {
-    std::string str_trim = trimFunction(date);
-    if(str_trim.length() > 10)
+    std::string str = trimFunction(date);
+    if(str.length() > 10)
     {
-        std::cout << "ERROR: bad input => " << date << std::endl;
+        std::cout << "ERROR: bad input => " << str << std::endl;
         return false;
     }
-    size_t delimiter_pos = str_trim.find_first_of("-");
+    size_t delimiter_pos = str.find_first_of("-");
     if (delimiter_pos == std::string::npos || delimiter_pos > 4)
     {
-        std::cout << "ERROR: bad input => " << date << std::endl;
+        std::cout << "ERROR: bad input => " << str << std::endl;
         return false;
     }
-    std::string year = str_trim.substr(0, delimiter_pos);
+    std::string year = str.substr(0, delimiter_pos);
     if (!yearCheck(year))
     {
-        std::cout << "ERROR: bad input => " << date << std::endl;
+        std::cout << "ERROR: bad input => " << str << std::endl;
         return false;
     }
-    std::string monthandDay = str_trim.substr(delimiter_pos + 1);
+    std::string monthandDay = str.substr(delimiter_pos + 1);
     delimiter_pos = monthandDay.find_first_of("-");
     if (delimiter_pos == std::string::npos || delimiter_pos > 2)
     {
-        std::cout << "ERROR: bad input => " << date << std::endl;
+        std::cout << "ERROR: bad input => " << str << std::endl;
         return false;
     }
     std::string month = monthandDay.substr(0, delimiter_pos);
     std::string day = monthandDay.substr(delimiter_pos + 1);
     if (!monthCheck(month) || !dayCheck(day))
     {
-        std::cout << "ERROR: bad input => " << date << std::endl;
+        std::cout << "ERROR: bad input => " << str << std::endl;
         return false;
     }
-    this->date = str_trim;
+    this->date = str;
     return true;
 }
 
 bool BitcoinExchange::valueValidation(const std::string& value)
 {
-    std::string str_trim = trimFunction(value);
+    std::string str = trimFunction(value);
     if (value.empty())
         return false;
 
     try {
-        double number = std::stod(str_trim);
+        double number = std::stod(str);
         if (number < 0.0 )
         {
             std::cout << "ERROR: not a positive number." << std::endl;
@@ -230,7 +229,6 @@ bool BitcoinExchange::valueValidation(const std::string& value)
 
 void BitcoinExchange::parseInput(const std::string& input)
 {
-    int i = 0;
     std::ifstream file(input);
     if (!file.is_open())
     {
@@ -266,9 +264,33 @@ void BitcoinExchange::parseInput(const std::string& input)
         {
             continue ;
         }
-        std::cout << "line " << i++ << std::endl; // delete
+        exchangeValue();
     }
     file.close();
+}
+
+void BitcoinExchange::exchangeValue()
+{
+    auto it = this->dataMap.lower_bound(date);
+    double result;
+
+    if (it == this->dataMap.begin())
+    {
+        std::cerr << "ERROR: no valid date found." << std::endl;
+        return ;
+    }
+
+    if(it != this->dataMap.end() && it->first == date)
+    {
+        result = it->second * value;
+        std::cout << date << " => " << value << " = " << result << std::endl;
+    }
+    else
+    {
+        --it;
+        result = it->second * value;
+        std::cout << date << " => " << value << " = " << result << std::endl;
+    }
 }
 
 void BitcoinExchange::printMap()
