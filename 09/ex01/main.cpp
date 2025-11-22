@@ -10,7 +10,8 @@ int main(int argc, char **argv)
         return 1;
     }
     try {
-        RPN rpm(argv[1]);
+        RPN rpn(argv[1]);
+        rpn.printResult();
     }
     catch(const std::exception &e)
     {

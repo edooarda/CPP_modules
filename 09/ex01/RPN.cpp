@@ -25,21 +25,37 @@ RPN::~RPN()
 }
 
 
-int RPN::execution(char op)
+void RPN::execution(char op)
 {
+    if (this->numbers.size() < 2)
+        throw std::invalid_argument("not valid RPN");
+
     int result;
+    unsigned int leftNumber = this->numbers.top();
+    this->numbers.pop();
     unsigned int rightNumber = this->numbers.top();
+    this->numbers.pop();
 
     switch (op)
     {
-    case '+':
-        /* code */
-        break;
-    
-    default:
-        break;
+        case '+':
+            result = rightNumber + leftNumber;
+            break;
+        case '-':
+            result = rightNumber - leftNumber;
+            break;
+        case '*':
+            result = rightNumber * leftNumber;
+            break;
+        case '/':
+            if(leftNumber == 0)
+            {
+                throw std::invalid_argument("division by 0 not allowed");
+            }
+            result = rightNumber / leftNumber;
+            break;
     }
-
+    this->numbers.push(result);
 }
 
 static bool isOperators(char c)
@@ -66,19 +82,25 @@ void RPN::parseInput(const std::string& input)
         }
         else if(isdigit(tokens[0]))
         {
-            // std::cout << "NUMBER: " << tokens << std::endl;
             operands = tokens[0] - '0';
             this->numbers.push(operands);
-            // std::cout << this->numbers.top() << std::endl;
         }
         else if(isOperators(tokens[0]))
         {
-            std::cout << "Operator: " << tokens << std::endl;
+            execution(tokens[0]);
         }
         else
         {
             throw std::invalid_argument("not valid input");
         }
     }
+}
 
+void RPN::printResult()
+{
+    if (this->numbers.size() != 1)
+    {
+        throw std::invalid_argument("not valid RPN");
+    }
+    std::cout << "Result: " << this->numbers.top() << std::endl;
 }

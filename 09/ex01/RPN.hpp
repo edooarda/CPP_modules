@@ -17,8 +17,8 @@ class RPN {
         RPN & operator=(const RPN &other);
 
         void parseInput(const std::string& input);
-        int execution(char op);
-
+        void execution(char op);
+        void printResult();
 };
 
 #endif
