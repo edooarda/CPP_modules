@@ -11,6 +11,7 @@ RESET = \033[0m
 
 
 SRC = main.cpp \
+	RPN.cpp \
 
 
 OBJ = $(SRC:.cpp=.o)

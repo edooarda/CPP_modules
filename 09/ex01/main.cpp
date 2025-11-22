@@ -9,5 +9,12 @@ int main(int argc, char **argv)
         std::cout << "Wrong amount of arguments" << std::endl;
         return 1;
     }
-
+    try {
+        RPN rpm(argv[1]);
+    }
+    catch(const std::exception &e)
+    {
+        std::cerr << "Error: " << e.what() << std::endl;
+        return 1;
+    }
 }
