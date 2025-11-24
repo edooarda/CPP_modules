@@ -17,6 +17,16 @@ int main(int argc, char** argv)
 
     try {
         PmergeMe input(argv);
+
+        std::vector<int> vec_container = input.parseNumbers<std::vector<int> >(argc, argv);
+        std::cout << "Before Vector: [ ";
+        input.printNumbers(vec_container);
+        std::cout << "]" << std::endl;
+
+        std::list<int> list_container = input.parseNumbers<std::list<int> >(argc, argv);
+        std::cout << "Before List: [ ";
+        input.printNumbers(list_container);
+        std::cout << "]" << std::endl;
     }
     catch(const std::exception &e)
     {
