@@ -9,24 +9,23 @@ int main(int argc, char** argv)
         std::cout << "Wrong amount of arguments" << std::endl;
         return 1;
     }
-    else if ( argc == 2 )
-    {
-        std::cout << "Amount Already Sorted: " << argv[1] << std::endl;
-        return 0;
-    }
 
     try {
         PmergeMe input(argv);
 
         std::vector<int> vec_container = input.parseNumbers<std::vector<int> >(argc, argv);
-        std::cout << "Before Vector: [ ";
-        input.printNumbers(vec_container);
-        std::cout << "]" << std::endl;
+        input.printFunction("Before Vector", vec_container);
 
         std::list<int> list_container = input.parseNumbers<std::list<int> >(argc, argv);
-        std::cout << "Before List: [ ";
-        input.printNumbers(list_container);
-        std::cout << "]" << std::endl;
+        input.printFunction("Before List", list_container);
+
+        std::chrono::microseconds duration_v = input.vecFordJohnsonAlgo(vec_container);
+        std::chrono::microseconds duration_l = input.listFordJohnsonAlgo(list_container);
+
+        input.printFunction("After Vector", vec_container);
+        input.printFunction("After List", list_container);
+        std::cout << "Time to process a range of " << (argc - 1) << " elements with std::vector: " << duration_v.count() << "µs" << std::endl;;
+        std::cout << "Time to process a range of " << (argc - 1) << " elements with std::list: " << duration_l.count() << "µs" << std::endl;
     }
     catch(const std::exception &e)
     {

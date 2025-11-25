@@ -6,6 +6,9 @@
 #include <string>
 #include <list>
 #include <vector>
+#include <chrono>
+#include <utility>
+#include <algorithm>
 
 class PmergeMe{
     private:
@@ -13,11 +16,14 @@ class PmergeMe{
     public:
         PmergeMe();
         PmergeMe(char **argv);
-        // PmergeMe(const  PmergeMe &other);
+        PmergeMe(const  PmergeMe &other) = delete;
         ~PmergeMe();
-        // PmergeMe & operator=(const  PmergeMe &other);
+        PmergeMe & operator=(const  PmergeMe &other) = delete;
 
     void validateInput(char **argv);
+    std::chrono::microseconds vecFordJohnsonAlgo(std::vector<int>& vec);
+
+    std::chrono::microseconds listFordJohnsonAlgo(std::list<int>& lis);
 
     template <typename T>
     T parseNumbers(int argc, char **argv)
@@ -45,6 +51,14 @@ class PmergeMe{
         for (auto number : container) {
         std::cout << number << ' ';
         }
+    }
+
+    template <typename T>
+    void printFunction(std::string word, T container)
+    {
+        std::cout << word <<": [ ";
+        printNumbers(container);
+        std::cout << "]" << std::endl;
     }
 
 };
