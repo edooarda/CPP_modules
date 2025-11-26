@@ -25,6 +25,8 @@ class PmergeMe{
 
     std::chrono::microseconds listFordJohnsonAlgo(std::list<int>& lis);
 
+    std::vector<int> vecSort(std::vector<int> container);
+
     template <typename T>
     T parseNumbers(int argc, char **argv)
     {
