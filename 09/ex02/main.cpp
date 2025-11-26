@@ -16,16 +16,16 @@ int main(int argc, char** argv)
         std::vector<int> vec_container = input.parseNumbers<std::vector<int> >(argc, argv);
         input.printFunction("Before Vector", vec_container);
 
-        std::list<int> list_container = input.parseNumbers<std::list<int> >(argc, argv);
-        input.printFunction("Before List", list_container);
+        std::deque<int> deq_container = input.parseNumbers<std::deque<int> >(argc, argv);
+        input.printFunction("Before Deque", deq_container);
 
         std::chrono::microseconds duration_v = input.vecFordJohnsonAlgo(vec_container);
-        std::chrono::microseconds duration_l = input.listFordJohnsonAlgo(list_container);
+        std::chrono::microseconds duration_l = input.deqFordJohnsonAlgo(deq_container);
 
         input.printFunction("After Vector", vec_container);
-        input.printFunction("After List", list_container);
+        input.printFunction("After Deque", deq_container);
         std::cout << "Time to process a range of " << (argc - 1) << " elements with std::vector: " << duration_v.count() << "µs" << std::endl;;
-        std::cout << "Time to process a range of " << (argc - 1) << " elements with std::list: " << duration_l.count() << "µs" << std::endl;
+        std::cout << "Time to process a range of " << (argc - 1) << " elements with std::deque: " << duration_l.count() << "µs" << std::endl;
     }
     catch(const std::exception &e)
     {

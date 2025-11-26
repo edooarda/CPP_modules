@@ -4,7 +4,7 @@
 #include <iostream>
 #include <climits>
 #include <string>
-#include <list>
+#include <deque>
 #include <vector>
 #include <chrono>
 #include <utility>
@@ -22,10 +22,10 @@ class PmergeMe{
 
     void validateInput(char **argv);
     std::chrono::microseconds vecFordJohnsonAlgo(std::vector<int>& vec);
-
-    std::chrono::microseconds listFordJohnsonAlgo(std::list<int>& lis);
+    std::chrono::microseconds deqFordJohnsonAlgo(std::deque<int>& deq);
 
     std::vector<int> vecSort(std::vector<int> container);
+    std::deque<int> deqSort(std::deque<int> container);
 
     template <typename T>
     T parseNumbers(int argc, char **argv)
