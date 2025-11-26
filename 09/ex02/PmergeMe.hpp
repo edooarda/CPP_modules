@@ -60,7 +60,7 @@ class PmergeMe{
     {
         std::cout << word <<": [ ";
         printNumbers(container);
-        std::cout << "]" << std::endl;
+        std::cout << "]\n" << std::endl;
     }
 
 };

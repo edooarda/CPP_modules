@@ -14,16 +14,18 @@ int main(int argc, char** argv)
         PmergeMe input(argv);
 
         std::vector<int> vec_container = input.parseNumbers<std::vector<int> >(argc, argv);
-        input.printFunction("Before Vector", vec_container);
+        input.printFunction("Before (Vector)", vec_container);
 
         std::deque<int> deq_container = input.parseNumbers<std::deque<int> >(argc, argv);
-        input.printFunction("Before Deque", deq_container);
+        input.printFunction("Before (Deque)", deq_container);
 
         std::chrono::microseconds duration_v = input.vecFordJohnsonAlgo(vec_container);
         std::chrono::microseconds duration_l = input.deqFordJohnsonAlgo(deq_container);
 
-        input.printFunction("After Vector", vec_container);
-        input.printFunction("After Deque", deq_container);
+        std::cout << "\n";
+
+        input.printFunction("After (Vector)", vec_container);
+        input.printFunction("After (Deque)", deq_container);
         std::cout << "Time to process a range of " << (argc - 1) << " elements with std::vector: " << duration_v.count() << "µs" << std::endl;;
         std::cout << "Time to process a range of " << (argc - 1) << " elements with std::deque: " << duration_l.count() << "µs" << std::endl;
     }
