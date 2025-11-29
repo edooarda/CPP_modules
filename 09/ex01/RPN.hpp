@@ -8,7 +8,7 @@
 
 class RPN {
     private:
-        std::stack<unsigned int> numbers;
+        std::stack<int> numbers;
     public:
         RPN();
         RPN(const std::string& input);

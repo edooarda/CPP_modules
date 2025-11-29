@@ -31,9 +31,9 @@ void RPN::execution(char op)
         throw std::invalid_argument("not valid RPN");
 
     int result;
-    unsigned int leftNumber = this->numbers.top();
+    int leftNumber = this->numbers.top();
     this->numbers.pop();
-    unsigned int rightNumber = this->numbers.top();
+    int rightNumber = this->numbers.top();
     this->numbers.pop();
 
     switch (op)
